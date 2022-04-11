@@ -72,6 +72,19 @@
               }
             }
           }
+        },
+        "repeatedEnum": {
+          "repeated": true,
+          "type": "string",
+          "enum": [
+            "done",
+            "pending",
+            "running"
+          ]
+        },
+        "repeatedString": {
+          "repeated": true,
+          "type": "string"
         }
       }
     },

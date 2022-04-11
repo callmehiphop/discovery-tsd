@@ -31,6 +31,8 @@ declare namespace complex {
     }>;
     obj?: { key?: string; [key: string]: string };
     readonly readOnly?: string;
+    repeatedEnum?: Array<'done' | 'pending' | 'running'>;
+    repeatedString?: Array<string>;
     required: string;
     tuple?: [string, number];
   };

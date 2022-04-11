@@ -23,6 +23,12 @@ class Converter {
     if (schema.$ref) {
       return this.toTypeName(schema.$ref);
     }
+    if (schema.repeated == true) {
+      if (schema.enum) {
+        return `Array<${this.toLiteralUnion(schema.enum)}>`;
+      }
+      return `Array<${schema.type}>`;
+    }
     if (schema.enum) {
       return this.toLiteralUnion(schema.enum);
     }
