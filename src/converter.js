@@ -20,14 +20,16 @@ class Converter {
     return [type, ...refs].join('&');
   }
   getType(schema) {
+    let {repeated, ...schemaCopy} = schema;
+
     if (schema.$ref) {
       return this.toTypeName(schema.$ref);
     }
-    if (schema.repeated == true) {
+    if (repeated) {
       if (schema.enum) {
-        return `Array<${this.toLiteralUnion(schema.enum)}>`;
+        return `Array<${this.getType(schemaCopy)}>`;
       }
-      return `Array<${schema.type}>`;
+      return `Array<${this.getType(schemaCopy)}>`;
     }
     if (schema.enum) {
       return this.toLiteralUnion(schema.enum);

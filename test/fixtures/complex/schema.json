@@ -73,7 +73,7 @@
             }
           }
         },
-        "repeatedEnum": {
+        "repeated": {
           "repeated": true,
           "type": "string",
           "enum": [
@@ -82,9 +82,19 @@
             "running"
           ]
         },
-        "repeatedString": {
+        "nestedRepeated": {
           "repeated": true,
-          "type": "string"
+          "type": "object",
+          "properties": {
+            "nestedRepeatedProp": {
+              "repeated": true,
+              "type": "string",
+              "enum": [
+                "foo",
+                "bar"
+              ]
+            }
+          }
         }
       }
     },

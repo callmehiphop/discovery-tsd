@@ -29,10 +29,10 @@ declare namespace complex {
        */
       nestedProp?: IExtendedSchema;
     }>;
+    nestedRepeated?: Array<{ nestedRepeatedProp?: Array<'foo' | 'bar'> }>;
     obj?: { key?: string; [key: string]: string };
     readonly readOnly?: string;
-    repeatedEnum?: Array<'done' | 'pending' | 'running'>;
-    repeatedString?: Array<string>;
+    repeated?: Array<'done' | 'pending' | 'running'>;
     required: string;
     tuple?: [string, number];
   };
