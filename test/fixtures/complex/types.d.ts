@@ -34,7 +34,9 @@ declare namespace complex {
     readonly readOnly?: string;
     repeated?: Array<'done' | 'pending' | 'running'>;
     required: string;
+    signed64BitInt?: number | string;
     tuple?: [string, number];
+    unsigned64BitInt?: number | string;
   };
 }
 

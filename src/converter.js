@@ -34,6 +34,9 @@ class Converter {
     if (schema.type === 'integer') {
       return 'number';
     }
+    if (schema.type === 'string' && (schema.format === 'uint64' || schema.format === 'int64')) {
+      return 'number | string';
+    }
     if (schema.type === 'array') {
       return this.toArray(schema.items, schema.additionalItems);
     }

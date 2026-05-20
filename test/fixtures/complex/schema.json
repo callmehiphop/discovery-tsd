@@ -17,6 +17,14 @@
         "integer": {
           "type": "integer"
         },
+        "unsigned64BitInt": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "signed64BitInt": {
+          "type": "string",
+          "format": "int64"
+        },
         "doc": {
           "type": "string",
           "description": "A description"
